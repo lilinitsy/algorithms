@@ -49,7 +49,7 @@ vector<int> maxSubarray(vector<int> arr) {
 	for(size_t i = 0; i < arr.size(); i++)
 	{
 		intermediary_sum += arr[i];
-		printf("%d value\t", arr[i]);
+		//printf("%d value\t", arr[i]);
 
 		if(intermediary_sum > max_sum)
 		{
