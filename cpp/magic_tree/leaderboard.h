@@ -24,7 +24,13 @@ using namespace std;
 vector<int> climbingLeaderboard(vector<int> ranked, vector<int> player)
 {
 	vector<int> players_rank;
+	ranked.erase(unique(ranked.begin(), ranked.end()), ranked.end());
 
+	for(int score : player)
+	{
+		int rank = lower_bound(ranked.begin(), ranked.end(), score, greater<int>()) - ranked.begin();
+		players_rank.push_back(rank + 1);
+	}
 
 	return players_rank;
 }
