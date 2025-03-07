@@ -11,8 +11,8 @@ int main()
 	printf("output: %s\n", output.c_str());
 
 	s = "iffactsdontfittotheorychangethefacts";
-  output = encryption(s);
-  printf("output: %s\n", output.c_str());
+	output = encryption(s);
+	printf("output: %s\n", output.c_str());
 
 	return 0;
 }
