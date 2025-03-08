@@ -35,6 +35,28 @@ struct nodeinfo
 };
 
 
+long long maximumImportanceFaster(int n, vector<vector<int>> &roads)
+{
+	vector<int> connections(n, 0);
+
+	for(vector<int> road : roads)
+	{
+		connections[road[0]]++;
+		connections[road[1]]++;
+	}
+
+	sort(connections.begin(), connections.end());
+
+	long long sum = 0;
+	for(int i = 0; i < n; i++)
+	{
+		sum += connections[i] * (i + 1);
+	}
+
+	return sum;
+}
+
+
 long long maximumImportance(int n, vector<vector<int>> &roads)
 {
 	// First figure out how many connections each node has and sort based on that
